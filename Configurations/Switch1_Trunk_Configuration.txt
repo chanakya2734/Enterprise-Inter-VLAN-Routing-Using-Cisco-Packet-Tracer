@@ -1,1 +1,15 @@
-
+Switch1# configure terminal
+Switch1(config)# int range fao/2-3
+Switch1(config-if-range)# switchporr mode access
+Switch1(config-if-range)# switchport access vlan 20
+Switch1(config-if-range)# vlan 20
+Switch1(config-vlan)# name Accounts
+Switch1(config-vlan)# end
+Switch1(config)# valn 10
+Switch1(config-vlan)# name sales
+Switch1(config-vlan)# int fao/1
+Switch1(config-if)# switchport mode access
+Switch1(config-if)# switchport access vlan 10
+Switch1(config)# int fao/3
+Switch1(config)# switchport mode trunk
+Switch1(config)# do show int trunk
