@@ -1,1 +1,21 @@
-
+Switch0> enable
+Switch0# configure terminal
+Switch0(Configure)# vlan 10
+Switch0(Configure)# name sales
+Switch0(Configure)# exit
+Switch0(Configure)# vlan 20
+Switch0(Configure)# name Accounts
+Switch0(Configure)# do show vlan brief
+Switch0(Configure)# int fao/1
+Switch0(Configure-if)# switchport mode access
+Switch0(Configure-if)# switchport access vlan 10
+Switch0(Configure)# int fao/2
+Switch0(Configure-if)# switchport mode access
+Switch0(Configure-if)# switchport access vlan 20
+Switch0(Configure)# int fao/3
+Switch0(Configure-if)# switchport mode access
+Switch0(Configure-if)# switchport access vlan 10
+Switch0(Configure)# switchport mode trunk
+Switch0(Configure)# do show int trunk
+Switch0(Configure)# int fao/4
+Switch0(Configure-if)# switchport mode trunk
