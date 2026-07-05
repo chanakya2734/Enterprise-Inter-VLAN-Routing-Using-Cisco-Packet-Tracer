@@ -1,1 +1,24 @@
-
+Switch(config)# int gig1/0/4
+Switch(config-if)# no switchport
+Switch(config-if)# ip address 192.168.100.100 255.255.255.0
+Switch(config-if)# no shutdown
+Switch# show ip int br
+Switch(config)# ip routing
+Switch# configure terminal
+Switch(config-vlan)# int gig1/0/1
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 10
+Switch(config-if)# int gig1/0/2
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 20
+Switch(config-if)# vlan 20
+Switch(config-vlan)# name Accounts
+Switch(config-if)# vlan 10
+Switch(config-vlan)# name sales
+Switch# show vlan brief
+Switch# configure terminal
+Switch(config)# int vlan 10
+Switch(config-if)# ip address 192.168.1.100 255.255.255.0
+Switch(config)# int vlan 20
+Switch(config-if)# ip address 192.168.10.100 255.255.255.0
+Switch# show ip int br
